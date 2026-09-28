@@ -54,6 +54,8 @@
 				</LabelDecoration>
 				<InputField name="Узел" id="130">
 					<DataPath>Узел</DataPath>
+					<ClearButton>true</ClearButton>
+					<DropListButton>true</DropListButton>
 					<HorizontalStretch>true</HorizontalStretch>
 					<ContextMenu name="УзелКонтекстноеМеню" id="131"/>
 					<ExtendedTooltip name="УзелРасширеннаяПодсказка" id="132"/>
@@ -218,7 +220,11 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:Type>cfg:ExchangePlanRef.ОбменУправлениеТорговлей103БухгалтерияПредприятия30</v8:Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>36</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 		<Attribute name="ОписаниеУзла" id="3">
