@@ -19,12 +19,13 @@
 					<v8:content>Сравнение записей регистров накопления</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>Сравнение записей регистров накопления двух баз УТ 10.3 за период</Comment>
+			<Comment>Сравнение записей за период и остатков на дату по регистрам накопления двух баз УТ 10.3</Comment>
 			<DefaultForm>ExternalDataProcessor.СравнениеЗаписейРегистровНакопления.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
 			<Form>Форма</Form>
+			<Form>ФормаОстатков</Form>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
