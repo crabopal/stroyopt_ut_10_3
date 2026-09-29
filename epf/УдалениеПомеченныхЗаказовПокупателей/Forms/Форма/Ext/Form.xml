@@ -44,10 +44,11 @@
 Непроведенный документ без движений помечается на удаление и входит в цепочку. Проведенный или с движениями не помечается и блокирует удаление, пока сам не помечен.
 Документ с датой позже границы не удаляется и не помечается. Запись регистров параметров доставки по документу и параметров доставки товаров по документу с полем Дата позже границы тоже блокирует удаление. Граница включает выбранный день целиком. Пустая граница не ограничивает дату.
 Отбор задается по любому полю заказа, в том числе полю табличной части. Поле и вид сравнения выбираются из списка. Для одной ссылки значение подбирается кнопкой выбора. Для списка ссылок открывается список объектов, в котором можно выделить несколько строк.
-Несколько отборов объединяются по И. Ведущие записи регистров сведений удаляются вместе с объектом. Движения в корректировке записей регистров убираются из документа, сам документ не удаляется.</v8:content>
+Несколько отборов объединяются по И. Ведущие записи регистров сведений удаляются вместе с объектом. Движения в корректировке записей регистров убираются из документа, сам документ не удаляется.
+Сводка по типам показывает, сколько объектов каждого типа будет удалено или уже удалено. Она заполняется и при проверке, и при удалении.</v8:content>
 						</v8:item>
 					</Title>
-					<Height>8</Height>
+					<Height>9</Height>
 					<HorizontalStretch>true</HorizontalStretch>
 					<VerticalStretch>false</VerticalStretch>
 					<ContextMenu name="ПояснениеКонтекстноеМеню" id="121"/>
@@ -181,6 +182,72 @@
 					<ContextMenu name="ИтогОперацииКонтекстноеМеню" id="211"/>
 					<ExtendedTooltip name="ИтогОперацииРасширеннаяПодсказка" id="212"/>
 				</InputField>
+				<LabelDecoration name="ЗаголовокСводки" id="255">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>К удалению по типам объектов</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ЗаголовокСводкиКонтекстноеМеню" id="256"/>
+					<ExtendedTooltip name="ЗаголовокСводкиРасширеннаяПодсказка" id="257"/>
+				</LabelDecoration>
+				<Table name="Сводка" id="260">
+					<Representation>List</Representation>
+					<ReadOnly>true</ReadOnly>
+					<ChangeRowSet>false</ChangeRowSet>
+					<ChangeRowOrder>false</ChangeRowOrder>
+					<Height>5</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<DataPath>Сводка</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="СводкаКонтекстноеМеню" id="261"/>
+					<AutoCommandBar name="СводкаКоманднаяПанель" id="262">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="СводкаРасширеннаяПодсказка" id="263"/>
+					<SearchStringAddition name="СводкаСтрокаПоиска" id="264">
+						<AdditionSource>
+							<Item>Сводка</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СводкаСтрокаПоискаКонтекстноеМеню" id="265"/>
+						<ExtendedTooltip name="СводкаСтрокаПоискаРасширеннаяПодсказка" id="266"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="СводкаСостояниеПросмотра" id="267">
+						<AdditionSource>
+							<Item>Сводка</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="СводкаСостояниеПросмотраКонтекстноеМеню" id="268"/>
+						<ExtendedTooltip name="СводкаСостояниеПросмотраРасширеннаяПодсказка" id="269"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="СводкаУправлениеПоиском" id="270">
+						<AdditionSource>
+							<Item>Сводка</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="СводкаУправлениеПоискомКонтекстноеМеню" id="271"/>
+						<ExtendedTooltip name="СводкаУправлениеПоискомРасширеннаяПодсказка" id="272"/>
+					</SearchControlAddition>
+					<ChildItems>
+						<InputField name="СводкаТип" id="273">
+							<DataPath>Сводка.Тип</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="СводкаТипКонтекстноеМеню" id="274"/>
+							<ExtendedTooltip name="СводкаТипРасширеннаяПодсказка" id="275"/>
+						</InputField>
+						<InputField name="СводкаКоличество" id="276">
+							<DataPath>Сводка.Количество</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<Width>12</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<ContextMenu name="СводкаКоличествоКонтекстноеМеню" id="277"/>
+							<ExtendedTooltip name="СводкаКоличествоРасширеннаяПодсказка" id="278"/>
+						</InputField>
+					</ChildItems>
+				</Table>
 				<Table name="Результат" id="220">
 					<Representation>List</Representation>
 					<ReadOnly>true</ReadOnly>
@@ -373,6 +440,50 @@
 							<v8:Length>0</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Сводка" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>К удалению по типам</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Тип" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Количество" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Количество</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
 					</Type>
 				</Column>
 			</Columns>
