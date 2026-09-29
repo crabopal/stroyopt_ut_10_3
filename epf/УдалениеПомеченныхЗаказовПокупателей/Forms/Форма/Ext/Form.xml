@@ -140,6 +140,7 @@
 							<ContextMenu name="ОтборыВидСравненияКонтекстноеМеню" id="194"/>
 							<ExtendedTooltip name="ОтборыВидСравненияРасширеннаяПодсказка" id="195"/>
 							<Events>
+								<Event name="OnChange">ОтборыВидСравненияПриИзменении</Event>
 								<Event name="StartChoice">ОтборыВидСравненияНачалоВыбора</Event>
 							</Events>
 						</InputField>
@@ -155,6 +156,9 @@
 							</Events>
 						</InputField>
 					</ChildItems>
+					<Events>
+						<Event name="OnActivateRow">ОтборыПриАктивизацииСтроки</Event>
+					</Events>
 				</Table>
 				<InputField name="ОтборДействие" id="200">
 					<DataPath>ОтборДействие</DataPath>
@@ -338,11 +342,22 @@
 						</v8:item>
 					</Title>
 					<Type>
+						<v8:Type>xs:boolean</v8:Type>
 						<v8:Type>xs:string</v8:Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>5</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
 						<v8:StringQualifiers>
 							<v8:Length>0</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
 					</Type>
 				</Column>
 				<Column name="ЗначениеКлюч" id="4">
