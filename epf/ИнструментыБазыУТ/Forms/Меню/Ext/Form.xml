@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Инструменты базы УТ</v8:content>
+		</v8:item>
+	</Title>
+	<AutoTitle>false</AutoTitle>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+	</AutoCommandBar>
+	<ChildItems>
+		<UsualGroup name="ГруппаГлавная" id="1">
+			<Group>Vertical</Group>
+			<Behavior>Usual</Behavior>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаГлавнаяРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<LabelDecoration name="Пояснение" id="3">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выберите инструмент. Окно меню остается открытым, инструмент открывается отдельно.
+Сравнение регистров и ссылок: выгрузка в первой базе и сравнение файла во второй.
+Перенос обмена переносит регистрацию узла, удаление заказов разбирает помеченные цепочки.</v8:content>
+						</v8:item>
+					</Title>
+					<Height>4</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<ContextMenu name="ПояснениеКонтекстноеМеню" id="4"/>
+					<ExtendedTooltip name="ПояснениеРасширеннаяПодсказка" id="5"/>
+				</LabelDecoration>
+			<Button name="СравнениеНакопления" id="10">
+				<Type>UsualButton</Type>
+				<Representation>Auto</Representation>
+				<DefaultButton>false</DefaultButton>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.СравнениеНакопления</CommandName>
+				<ExtendedTooltip name="СравнениеНакопленияРасширеннаяПодсказка" id="11"/>
+			</Button>
+			<Button name="ОстаткиНакопления" id="12">
+				<Type>UsualButton</Type>
+				<Representation>Auto</Representation>
+				<DefaultButton>false</DefaultButton>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.ОстаткиНакопления</CommandName>
+				<ExtendedTooltip name="ОстаткиНакопленияРасширеннаяПодсказка" id="13"/>
+			</Button>
+			<Button name="СравнениеБухгалтерии" id="14">
+				<Type>UsualButton</Type>
+				<Representation>Auto</Representation>
+				<DefaultButton>false</DefaultButton>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.СравнениеБухгалтерии</CommandName>
+				<ExtendedTooltip name="СравнениеБухгалтерииРасширеннаяПодсказка" id="15"/>
+			</Button>
+			<Button name="ОстаткиБухгалтерии" id="16">
+				<Type>UsualButton</Type>
+				<Representation>Auto</Representation>
+				<DefaultButton>false</DefaultButton>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.ОстаткиБухгалтерии</CommandName>
+				<ExtendedTooltip name="ОстаткиБухгалтерииРасширеннаяПодсказка" id="17"/>
+			</Button>
+			<Button name="СравнениеСсылок" id="18">
+				<Type>UsualButton</Type>
+				<Representation>Auto</Representation>
+				<DefaultButton>false</DefaultButton>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.СравнениеСсылок</CommandName>
+				<ExtendedTooltip name="СравнениеСсылокРасширеннаяПодсказка" id="19"/>
+			</Button>
+			<Button name="ПереносОбмена" id="20">
+				<Type>UsualButton</Type>
+				<Representation>Auto</Representation>
+				<DefaultButton>false</DefaultButton>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.ПереносОбмена</CommandName>
+				<ExtendedTooltip name="ПереносОбменаРасширеннаяПодсказка" id="21"/>
+			</Button>
+			<Button name="УдалениеЗаказов" id="22">
+				<Type>UsualButton</Type>
+				<Representation>Auto</Representation>
+				<DefaultButton>false</DefaultButton>
+				<HorizontalStretch>true</HorizontalStretch>
+				<CommandName>Form.Command.УдалениеЗаказов</CommandName>
+				<ExtendedTooltip name="УдалениеЗаказовРасширеннаяПодсказка" id="23"/>
+			</Button>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ИнструментыБазыУТ</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СравнениеНакопления" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнение записей регистров накопления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Записи регистров накопления за период и переход к остаткам на дату</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СравнениеНакопления</Action>
+		</Command>
+		<Command name="ОстаткиНакопления" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнение остатков регистров накопления</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остатки регистров накопления на конец выбранного дня</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОстаткиНакопления</Action>
+		</Command>
+		<Command name="СравнениеБухгалтерии" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнение записей регистров бухгалтерии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проводки регистров бухгалтерии за период и переход к остаткам на дату</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СравнениеБухгалтерии</Action>
+		</Command>
+		<Command name="ОстаткиБухгалтерии" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнение остатков регистров бухгалтерии</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Остатки регистров бухгалтерии на конец выбранного дня</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОстаткиБухгалтерии</Action>
+		</Command>
+		<Command name="СравнениеСсылок" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сравнение ссылочных объектов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справочники, документы и другие ссылочные объекты по UUID</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СравнениеСсылок</Action>
+		</Command>
+		<Command name="ПереносОбмена" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перенос регистрации изменений обмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очередь регистрации узла ОбменУправлениеТорговлей103БухгалтерияПредприятия30</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПереносОбмена</Action>
+		</Command>
+		<Command name="УдалениеЗаказов" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удаление помеченных заказов покупателей</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удаление помеченных заказов и связанных с ними объектов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УдалениеЗаказов</Action>
+		</Command>
+	</Commands>
+</Form>
