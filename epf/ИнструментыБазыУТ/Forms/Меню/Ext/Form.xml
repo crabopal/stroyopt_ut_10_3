@@ -170,7 +170,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Справочники, документы и другие ссылочные объекты по UUID</v8:content>
+							<v8:content>Справочники и документы по UUID, в том числе сравнение трех файлов</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>СравнениеСсылок</Action>
