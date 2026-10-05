@@ -41,369 +41,407 @@
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
-		<UsualGroup name="ГруппаГлавная" id="110">
-			<Group>Vertical</Group>
-			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
+		<Pages name="Страницы" id="350">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
 			<HorizontalStretch>true</HorizontalStretch>
 			<VerticalStretch>true</VerticalStretch>
-			<ExtendedTooltip name="ГруппаГлавнаяРасширеннаяПодсказка" id="111"/>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="351"/>
 			<ChildItems>
-				<LabelDecoration name="Пояснение" id="120">
-					<Title formatted="false">
+				<Page name="СтраницаНастройка" id="352">
+					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Сравнение ссылочных объектов по UUID.
-1. В первой базе отметьте объекты, задайте отборы и период документов, нажмите «Выгрузить в файл».
-2. Во второй базе отметьте те же объекты и нажмите «Сравнить с файлом».
-3. «Сравнить три файла» сопоставляет три уже выгруженных файла по порядку выбора. В отчете и заголовках колонок показываются имена файлов без расширения .xml. Отмеченные типы ограничивают сравнение. Если ничего не отмечено, сравниваются все типы из файлов.
-В отчете сначала виден объект, например «Заказ покупателя 1 от 12.01.2010». Раскройте строку, чтобы увидеть изменившиеся колонки.
-Для трех файлов показано, сколько раз объект изменился между соседними файлами, в каких файлах он есть и как изменились колонки.
-Период ограничивает только документы по полю Дата. Ссылки сравниваются по типу и идентификатору.
-Цвет: жёлтый — расхождение или одно изменение, золотой — объект изменен два раза, розовый — только в этой базе, голубой — только в файле.</v8:content>
+							<v8:content>Настройка</v8:content>
 						</v8:item>
 					</Title>
-					<Height>9</Height>
-					<HorizontalStretch>true</HorizontalStretch>
-					<VerticalStretch>false</VerticalStretch>
-					<ContextMenu name="ПояснениеКонтекстноеМеню" id="121"/>
-					<ExtendedTooltip name="ПояснениеРасширеннаяПодсказка" id="122"/>
-				</LabelDecoration>
-				<InputField name="Период" id="130">
-					<DataPath>Период</DataPath>
-					<ContextMenu name="ПериодКонтекстноеМеню" id="131"/>
-					<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="132"/>
-				</InputField>
-				<Table name="Объекты" id="140">
-					<Representation>Tree</Representation>
-					<ChangeRowSet>false</ChangeRowSet>
-					<ChangeRowOrder>false</ChangeRowOrder>
-					<Height>8</Height>
-					<HorizontalStretch>true</HorizontalStretch>
-					<VerticalStretch>false</VerticalStretch>
-					<DataPath>Объекты</DataPath>
-					<RowFilter xsi:nil="true"/>
-					<ContextMenu name="ОбъектыКонтекстноеМеню" id="141"/>
-					<AutoCommandBar name="ОбъектыКоманднаяПанель" id="142">
-						<Autofill>false</Autofill>
-					</AutoCommandBar>
-					<ExtendedTooltip name="ОбъектыРасширеннаяПодсказка" id="143"/>
-					<SearchStringAddition name="ОбъектыСтрокаПоиска" id="144">
-						<AdditionSource>
-							<Item>Объекты</Item>
-							<Type>SearchStringRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="ОбъектыСтрокаПоискаКонтекстноеМеню" id="145"/>
-						<ExtendedTooltip name="ОбъектыСтрокаПоискаРасширеннаяПодсказка" id="146"/>
-					</SearchStringAddition>
-					<ViewStatusAddition name="ОбъектыСостояниеПросмотра" id="147">
-						<AdditionSource>
-							<Item>Объекты</Item>
-							<Type>ViewStatusRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="ОбъектыСостояниеПросмотраКонтекстноеМеню" id="148"/>
-						<ExtendedTooltip name="ОбъектыСостояниеПросмотраРасширеннаяПодсказка" id="149"/>
-					</ViewStatusAddition>
-					<SearchControlAddition name="ОбъектыУправлениеПоиском" id="150">
-						<AdditionSource>
-							<Item>Объекты</Item>
-							<Type>SearchControl</Type>
-						</AdditionSource>
-						<ContextMenu name="ОбъектыУправлениеПоискомКонтекстноеМеню" id="151"/>
-						<ExtendedTooltip name="ОбъектыУправлениеПоискомРасширеннаяПодсказка" id="152"/>
-					</SearchControlAddition>
-					<ChildItems>
-						<InputField name="ОбъектыИмя" id="166">
-							<DataPath>Объекты.Имя</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОбъектыИмяКонтекстноеМеню" id="167"/>
-							<ExtendedTooltip name="ОбъектыИмяРасширеннаяПодсказка" id="168"/>
-						</InputField>
-						<CheckBoxField name="ОбъектыВыбран" id="160">
-							<DataPath>Объекты.Выбран</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<CheckBoxType>Auto</CheckBoxType>
-							<ContextMenu name="ОбъектыВыбранКонтекстноеМеню" id="161"/>
-							<ExtendedTooltip name="ОбъектыВыбранРасширеннаяПодсказка" id="162"/>
-							<Events>
-								<Event name="OnChange">ОбъектыВыбранПриИзменении</Event>
-							</Events>
-						</CheckBoxField>
-						<InputField name="ОбъектыВид" id="163">
-							<DataPath>Объекты.Вид</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОбъектыВидКонтекстноеМеню" id="164"/>
-							<ExtendedTooltip name="ОбъектыВидРасширеннаяПодсказка" id="165"/>
-						</InputField>
-						<InputField name="ОбъектыСиноним" id="169">
-							<DataPath>Объекты.Синоним</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОбъектыСинонимКонтекстноеМеню" id="170"/>
-							<ExtendedTooltip name="ОбъектыСинонимРасширеннаяПодсказка" id="171"/>
-						</InputField>
-						<InputField name="ОбъектыЗаписейВБазе" id="172">
-							<DataPath>Объекты.ЗаписейВБазе</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОбъектыЗаписейВБазеКонтекстноеМеню" id="173"/>
-							<ExtendedTooltip name="ОбъектыЗаписейВБазеРасширеннаяПодсказка" id="174"/>
-						</InputField>
-						<InputField name="ОбъектыЗаписейВФайле" id="175">
-							<DataPath>Объекты.ЗаписейВФайле</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОбъектыЗаписейВФайлеКонтекстноеМеню" id="176"/>
-							<ExtendedTooltip name="ОбъектыЗаписейВФайлеРасширеннаяПодсказка" id="177"/>
-						</InputField>
-						<InputField name="ОбъектыТолькоВБазе" id="178">
-							<DataPath>Объекты.ТолькоВБазе</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОбъектыТолькоВБазеКонтекстноеМеню" id="179"/>
-							<ExtendedTooltip name="ОбъектыТолькоВБазеРасширеннаяПодсказка" id="180"/>
-						</InputField>
-						<InputField name="ОбъектыТолькоВФайле" id="181">
-							<DataPath>Объекты.ТолькоВФайле</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОбъектыТолькоВФайлеКонтекстноеМеню" id="182"/>
-							<ExtendedTooltip name="ОбъектыТолькоВФайлеРасширеннаяПодсказка" id="183"/>
-						</InputField>
-						<InputField name="ОбъектыРасхождений" id="184">
-							<DataPath>Объекты.Расхождений</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОбъектыРасхожденийКонтекстноеМеню" id="185"/>
-							<ExtendedTooltip name="ОбъектыРасхожденийРасширеннаяПодсказка" id="186"/>
-						</InputField>
-					</ChildItems>
-				</Table>
-				<Table name="Отборы" id="210">
-					<Representation>List</Representation>
-					<Height>4</Height>
-					<HorizontalStretch>true</HorizontalStretch>
-					<VerticalStretch>false</VerticalStretch>
-					<DataPath>Отборы</DataPath>
-					<RowFilter xsi:nil="true"/>
-					<ContextMenu name="ОтборыКонтекстноеМеню" id="211"/>
-					<AutoCommandBar name="ОтборыКоманднаяПанель" id="212">
-						<Autofill>true</Autofill>
-					</AutoCommandBar>
-					<ExtendedTooltip name="ОтборыРасширеннаяПодсказка" id="213"/>
-					<SearchStringAddition name="ОтборыСтрокаПоиска" id="214">
-						<AdditionSource>
-							<Item>Отборы</Item>
-							<Type>SearchStringRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="ОтборыСтрокаПоискаКонтекстноеМеню" id="215"/>
-						<ExtendedTooltip name="ОтборыСтрокаПоискаРасширеннаяПодсказка" id="216"/>
-					</SearchStringAddition>
-					<ViewStatusAddition name="ОтборыСостояниеПросмотра" id="217">
-						<AdditionSource>
-							<Item>Отборы</Item>
-							<Type>ViewStatusRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="ОтборыСостояниеПросмотраКонтекстноеМеню" id="218"/>
-						<ExtendedTooltip name="ОтборыСостояниеПросмотраРасширеннаяПодсказка" id="219"/>
-					</ViewStatusAddition>
-					<SearchControlAddition name="ОтборыУправлениеПоиском" id="220">
-						<AdditionSource>
-							<Item>Отборы</Item>
-							<Type>SearchControl</Type>
-						</AdditionSource>
-						<ContextMenu name="ОтборыУправлениеПоискомКонтекстноеМеню" id="221"/>
-						<ExtendedTooltip name="ОтборыУправлениеПоискомРасширеннаяПодсказка" id="222"/>
-					</SearchControlAddition>
-					<ChildItems>
-						<InputField name="ОтборыПолноеИмя" id="230">
-							<DataPath>Отборы.ПолноеИмя</DataPath>
-							<DropListButton>true</DropListButton>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОтборыПолноеИмяКонтекстноеМеню" id="231"/>
-							<ExtendedTooltip name="ОтборыПолноеИмяРасширеннаяПодсказка" id="232"/>
-							<Events>
-								<Event name="OnChange">ОтборыПолноеИмяПриИзменении</Event>
-							</Events>
-						</InputField>
-						<InputField name="ОтборыПоле" id="233">
-							<DataPath>Отборы.Поле</DataPath>
-							<DropListButton>true</DropListButton>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОтборыПолеКонтекстноеМеню" id="234"/>
-							<ExtendedTooltip name="ОтборыПолеРасширеннаяПодсказка" id="235"/>
-						</InputField>
-						<InputField name="ОтборыВидСравнения" id="236">
-							<DataPath>Отборы.ВидСравнения</DataPath>
-							<DropListButton>true</DropListButton>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОтборыВидСравненияКонтекстноеМеню" id="237"/>
-							<ExtendedTooltip name="ОтборыВидСравненияРасширеннаяПодсказка" id="238"/>
-						</InputField>
-						<InputField name="ОтборыЗначение" id="239">
-							<DataPath>Отборы.Значение</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ОтборыЗначениеКонтекстноеМеню" id="240"/>
-							<ExtendedTooltip name="ОтборыЗначениеРасширеннаяПодсказка" id="241"/>
-						</InputField>
-					</ChildItems>
-					<Events>
-						<Event name="OnActivateRow">ОтборыПриАктивизацииСтроки</Event>
-					</Events>
-				</Table>
-				<UsualGroup name="ГруппаОтбор" id="250">
-					<Group>Horizontal</Group>
-					<Behavior>Usual</Behavior>
-					<Representation>None</Representation>
-					<ShowTitle>false</ShowTitle>
-					<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="251"/>
-					<ChildItems>
-						<InputField name="ОтборОбъект" id="260">
-							<DataPath>ОтборОбъект</DataPath>
-							<ClearButton>true</ClearButton>
-							<DropListButton>true</DropListButton>
-							<ContextMenu name="ОтборОбъектКонтекстноеМеню" id="261"/>
-							<ExtendedTooltip name="ОтборОбъектРасширеннаяПодсказка" id="262"/>
-							<Events>
-								<Event name="OnChange">ОтборПриИзменении</Event>
-							</Events>
-						</InputField>
-						<InputField name="ОтборВид" id="270">
-							<DataPath>ОтборВид</DataPath>
-							<ClearButton>true</ClearButton>
-							<DropListButton>true</DropListButton>
-							<ContextMenu name="ОтборВидКонтекстноеМеню" id="271"/>
-							<ExtendedTooltip name="ОтборВидРасширеннаяПодсказка" id="272"/>
-							<Events>
-								<Event name="OnChange">ОтборПриИзменении</Event>
-							</Events>
-						</InputField>
-					</ChildItems>
-				</UsualGroup>
-				<InputField name="ИтогСравнения" id="280">
-					<DataPath>ИтогСравнения</DataPath>
-					<ReadOnly>true</ReadOnly>
-					<TitleLocation>None</TitleLocation>
-					<MultiLine>true</MultiLine>
-					<Height>4</Height>
-					<HorizontalStretch>true</HorizontalStretch>
-					<VerticalStretch>false</VerticalStretch>
-					<ContextMenu name="ИтогСравненияКонтекстноеМеню" id="281"/>
-					<ExtendedTooltip name="ИтогСравненияРасширеннаяПодсказка" id="282"/>
-				</InputField>
-				<Table name="Результат" id="290">
-					<Representation>Tree</Representation>
-					<ReadOnly>true</ReadOnly>
-					<ChangeRowSet>false</ChangeRowSet>
-					<ChangeRowOrder>false</ChangeRowOrder>
-					<Height>10</Height>
 					<HorizontalStretch>true</HorizontalStretch>
 					<VerticalStretch>true</VerticalStretch>
-					<DataPath>Результат</DataPath>
-					<RowFilter xsi:nil="true"/>
-					<ContextMenu name="РезультатКонтекстноеМеню" id="291"/>
-					<AutoCommandBar name="РезультатКоманднаяПанель" id="292">
-						<Autofill>false</Autofill>
-					</AutoCommandBar>
-					<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="293"/>
-					<SearchStringAddition name="РезультатСтрокаПоиска" id="294">
-						<AdditionSource>
-							<Item>Результат</Item>
-							<Type>SearchStringRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="РезультатСтрокаПоискаКонтекстноеМеню" id="295"/>
-						<ExtendedTooltip name="РезультатСтрокаПоискаРасширеннаяПодсказка" id="296"/>
-					</SearchStringAddition>
-					<ViewStatusAddition name="РезультатСостояниеПросмотра" id="297">
-						<AdditionSource>
-							<Item>Результат</Item>
-							<Type>ViewStatusRepresentation</Type>
-						</AdditionSource>
-						<ContextMenu name="РезультатСостояниеПросмотраКонтекстноеМеню" id="298"/>
-						<ExtendedTooltip name="РезультатСостояниеПросмотраРасширеннаяПодсказка" id="299"/>
-					</ViewStatusAddition>
-					<SearchControlAddition name="РезультатУправлениеПоиском" id="300">
-						<AdditionSource>
-							<Item>Результат</Item>
-							<Type>SearchControl</Type>
-						</AdditionSource>
-						<ContextMenu name="РезультатУправлениеПоискомКонтекстноеМеню" id="301"/>
-						<ExtendedTooltip name="РезультатУправлениеПоискомРасширеннаяПодсказка" id="302"/>
-					</SearchControlAddition>
+					<ExtendedTooltip name="СтраницаНастройкаРасширеннаяПодсказка" id="353"/>
 					<ChildItems>
-						<InputField name="РезультатПредставление" id="328">
-							<DataPath>Результат.Представление</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатПредставлениеКонтекстноеМеню" id="329"/>
-							<ExtendedTooltip name="РезультатПредставлениеРасширеннаяПодсказка" id="330"/>
-						</InputField>
-						<InputField name="РезультатСколькоРаз" id="331">
-							<DataPath>Результат.СколькоРаз</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатСколькоРазКонтекстноеМеню" id="332"/>
-							<ExtendedTooltip name="РезультатСколькоРазРасширеннаяПодсказка" id="333"/>
-						</InputField>
-						<InputField name="РезультатГде" id="334">
-							<DataPath>Результат.Где</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатГдеКонтекстноеМеню" id="335"/>
-							<ExtendedTooltip name="РезультатГдеРасширеннаяПодсказка" id="336"/>
-						</InputField>
-						<InputField name="РезультатКак" id="337">
-							<DataPath>Результат.Как</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатКакКонтекстноеМеню" id="338"/>
-							<ExtendedTooltip name="РезультатКакРасширеннаяПодсказка" id="339"/>
-						</InputField>
-						<InputField name="РезультатВидОтличия" id="313">
-							<DataPath>Результат.ВидОтличия</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатВидОтличияКонтекстноеМеню" id="314"/>
-							<ExtendedTooltip name="РезультатВидОтличияРасширеннаяПодсказка" id="315"/>
-						</InputField>
-						<InputField name="РезультатОбъект" id="310">
-							<DataPath>Результат.Объект</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатОбъектКонтекстноеМеню" id="311"/>
-							<ExtendedTooltip name="РезультатОбъектРасширеннаяПодсказка" id="312"/>
-						</InputField>
-						<InputField name="РезультатСсылка" id="316">
-							<DataPath>Результат.Ссылка</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатСсылкаКонтекстноеМеню" id="317"/>
-							<ExtendedTooltip name="РезультатСсылкаРасширеннаяПодсказка" id="318"/>
-						</InputField>
-						<InputField name="РезультатИмяПоля" id="319">
-							<DataPath>Результат.ИмяПоля</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатИмяПоляКонтекстноеМеню" id="320"/>
-							<ExtendedTooltip name="РезультатИмяПоляРасширеннаяПодсказка" id="321"/>
-						</InputField>
-						<InputField name="РезультатЗначениеВБазе" id="322">
-							<DataPath>Результат.ЗначениеВБазе</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатЗначениеВБазеКонтекстноеМеню" id="323"/>
-							<ExtendedTooltip name="РезультатЗначениеВБазеРасширеннаяПодсказка" id="324"/>
-						</InputField>
-						<InputField name="РезультатЗначениеВФайле" id="325">
-							<DataPath>Результат.ЗначениеВФайле</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатЗначениеВФайлеКонтекстноеМеню" id="326"/>
-							<ExtendedTooltip name="РезультатЗначениеВФайлеРасширеннаяПодсказка" id="327"/>
-						</InputField>
-						<InputField name="РезультатЗначение3" id="340">
-							<DataPath>Результат.Значение3</DataPath>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="РезультатЗначение3КонтекстноеМеню" id="341"/>
-							<ExtendedTooltip name="РезультатЗначение3РасширеннаяПодсказка" id="342"/>
-						</InputField>
+					<LabelDecoration name="Пояснение" id="120">
+						<Title formatted="false">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Сравнение ссылочных объектов по UUID.
+1. В первой базе отметьте объекты, задайте отборы и период документов, нажмите «Выгрузить в файл».
+2. Во второй базе отметьте те же объекты и нажмите «Сравнить с файлом».
+3. «Сравнить три файла» сопоставляет три уже выгруженных файла по порядку выбора. Имена файлов без .xml показываются в отчете.
+После сравнения откроется страница «Результат»: там дерево объектов и колонок занимает почти всю форму.
+Период ограничивает только документы. Цвет: жёлтый — одно изменение или расхождение, золотой — два раза, розовый — только в этой базе, голубой — только в файле.</v8:content>
+							</v8:item>
+						</Title>
+						<Height>6</Height>
+						<HorizontalStretch>true</HorizontalStretch>
+						<VerticalStretch>false</VerticalStretch>
+						<ContextMenu name="ПояснениеКонтекстноеМеню" id="121"/>
+						<ExtendedTooltip name="ПояснениеРасширеннаяПодсказка" id="122"/>
+					</LabelDecoration>
+					<InputField name="Период" id="130">
+						<DataPath>Период</DataPath>
+						<ContextMenu name="ПериодКонтекстноеМеню" id="131"/>
+						<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="132"/>
+					</InputField>
+					<Table name="Объекты" id="140">
+						<Representation>Tree</Representation>
+						<ChangeRowSet>false</ChangeRowSet>
+						<ChangeRowOrder>false</ChangeRowOrder>
+						<Height>12</Height>
+						<HorizontalStretch>true</HorizontalStretch>
+						<VerticalStretch>true</VerticalStretch>
+						<DataPath>Объекты</DataPath>
+						<RowFilter xsi:nil="true"/>
+						<ContextMenu name="ОбъектыКонтекстноеМеню" id="141"/>
+						<AutoCommandBar name="ОбъектыКоманднаяПанель" id="142">
+							<Autofill>false</Autofill>
+						</AutoCommandBar>
+						<ExtendedTooltip name="ОбъектыРасширеннаяПодсказка" id="143"/>
+						<SearchStringAddition name="ОбъектыСтрокаПоиска" id="144">
+							<AdditionSource>
+								<Item>Объекты</Item>
+								<Type>SearchStringRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="ОбъектыСтрокаПоискаКонтекстноеМеню" id="145"/>
+							<ExtendedTooltip name="ОбъектыСтрокаПоискаРасширеннаяПодсказка" id="146"/>
+						</SearchStringAddition>
+						<ViewStatusAddition name="ОбъектыСостояниеПросмотра" id="147">
+							<AdditionSource>
+								<Item>Объекты</Item>
+								<Type>ViewStatusRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="ОбъектыСостояниеПросмотраКонтекстноеМеню" id="148"/>
+							<ExtendedTooltip name="ОбъектыСостояниеПросмотраРасширеннаяПодсказка" id="149"/>
+						</ViewStatusAddition>
+						<SearchControlAddition name="ОбъектыУправлениеПоиском" id="150">
+							<AdditionSource>
+								<Item>Объекты</Item>
+								<Type>SearchControl</Type>
+							</AdditionSource>
+							<ContextMenu name="ОбъектыУправлениеПоискомКонтекстноеМеню" id="151"/>
+							<ExtendedTooltip name="ОбъектыУправлениеПоискомРасширеннаяПодсказка" id="152"/>
+						</SearchControlAddition>
+						<ChildItems>
+							<InputField name="ОбъектыИмя" id="166">
+								<DataPath>Объекты.Имя</DataPath>
+								<ReadOnly>true</ReadOnly>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОбъектыИмяКонтекстноеМеню" id="167"/>
+								<ExtendedTooltip name="ОбъектыИмяРасширеннаяПодсказка" id="168"/>
+							</InputField>
+							<CheckBoxField name="ОбъектыВыбран" id="160">
+								<DataPath>Объекты.Выбран</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<CheckBoxType>Auto</CheckBoxType>
+								<ContextMenu name="ОбъектыВыбранКонтекстноеМеню" id="161"/>
+								<ExtendedTooltip name="ОбъектыВыбранРасширеннаяПодсказка" id="162"/>
+								<Events>
+									<Event name="OnChange">ОбъектыВыбранПриИзменении</Event>
+								</Events>
+							</CheckBoxField>
+							<InputField name="ОбъектыВид" id="163">
+								<DataPath>Объекты.Вид</DataPath>
+								<ReadOnly>true</ReadOnly>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОбъектыВидКонтекстноеМеню" id="164"/>
+								<ExtendedTooltip name="ОбъектыВидРасширеннаяПодсказка" id="165"/>
+							</InputField>
+							<InputField name="ОбъектыСиноним" id="169">
+								<DataPath>Объекты.Синоним</DataPath>
+								<ReadOnly>true</ReadOnly>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОбъектыСинонимКонтекстноеМеню" id="170"/>
+								<ExtendedTooltip name="ОбъектыСинонимРасширеннаяПодсказка" id="171"/>
+							</InputField>
+							<InputField name="ОбъектыЗаписейВБазе" id="172">
+								<DataPath>Объекты.ЗаписейВБазе</DataPath>
+								<ReadOnly>true</ReadOnly>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОбъектыЗаписейВБазеКонтекстноеМеню" id="173"/>
+								<ExtendedTooltip name="ОбъектыЗаписейВБазеРасширеннаяПодсказка" id="174"/>
+							</InputField>
+							<InputField name="ОбъектыЗаписейВФайле" id="175">
+								<DataPath>Объекты.ЗаписейВФайле</DataPath>
+								<ReadOnly>true</ReadOnly>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОбъектыЗаписейВФайлеКонтекстноеМеню" id="176"/>
+								<ExtendedTooltip name="ОбъектыЗаписейВФайлеРасширеннаяПодсказка" id="177"/>
+							</InputField>
+							<InputField name="ОбъектыТолькоВБазе" id="178">
+								<DataPath>Объекты.ТолькоВБазе</DataPath>
+								<ReadOnly>true</ReadOnly>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОбъектыТолькоВБазеКонтекстноеМеню" id="179"/>
+								<ExtendedTooltip name="ОбъектыТолькоВБазеРасширеннаяПодсказка" id="180"/>
+							</InputField>
+							<InputField name="ОбъектыТолькоВФайле" id="181">
+								<DataPath>Объекты.ТолькоВФайле</DataPath>
+								<ReadOnly>true</ReadOnly>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОбъектыТолькоВФайлеКонтекстноеМеню" id="182"/>
+								<ExtendedTooltip name="ОбъектыТолькоВФайлеРасширеннаяПодсказка" id="183"/>
+							</InputField>
+							<InputField name="ОбъектыРасхождений" id="184">
+								<DataPath>Объекты.Расхождений</DataPath>
+								<ReadOnly>true</ReadOnly>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОбъектыРасхожденийКонтекстноеМеню" id="185"/>
+								<ExtendedTooltip name="ОбъектыРасхожденийРасширеннаяПодсказка" id="186"/>
+							</InputField>
+						</ChildItems>
+					</Table>
+					<Table name="Отборы" id="210">
+						<Representation>List</Representation>
+						<Height>4</Height>
+						<HorizontalStretch>true</HorizontalStretch>
+						<VerticalStretch>false</VerticalStretch>
+						<DataPath>Отборы</DataPath>
+						<RowFilter xsi:nil="true"/>
+						<ContextMenu name="ОтборыКонтекстноеМеню" id="211"/>
+						<AutoCommandBar name="ОтборыКоманднаяПанель" id="212">
+							<Autofill>true</Autofill>
+						</AutoCommandBar>
+						<ExtendedTooltip name="ОтборыРасширеннаяПодсказка" id="213"/>
+						<SearchStringAddition name="ОтборыСтрокаПоиска" id="214">
+							<AdditionSource>
+								<Item>Отборы</Item>
+								<Type>SearchStringRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="ОтборыСтрокаПоискаКонтекстноеМеню" id="215"/>
+							<ExtendedTooltip name="ОтборыСтрокаПоискаРасширеннаяПодсказка" id="216"/>
+						</SearchStringAddition>
+						<ViewStatusAddition name="ОтборыСостояниеПросмотра" id="217">
+							<AdditionSource>
+								<Item>Отборы</Item>
+								<Type>ViewStatusRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="ОтборыСостояниеПросмотраКонтекстноеМеню" id="218"/>
+							<ExtendedTooltip name="ОтборыСостояниеПросмотраРасширеннаяПодсказка" id="219"/>
+						</ViewStatusAddition>
+						<SearchControlAddition name="ОтборыУправлениеПоиском" id="220">
+							<AdditionSource>
+								<Item>Отборы</Item>
+								<Type>SearchControl</Type>
+							</AdditionSource>
+							<ContextMenu name="ОтборыУправлениеПоискомКонтекстноеМеню" id="221"/>
+							<ExtendedTooltip name="ОтборыУправлениеПоискомРасширеннаяПодсказка" id="222"/>
+						</SearchControlAddition>
+						<ChildItems>
+							<InputField name="ОтборыПолноеИмя" id="230">
+								<DataPath>Отборы.ПолноеИмя</DataPath>
+								<DropListButton>true</DropListButton>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОтборыПолноеИмяКонтекстноеМеню" id="231"/>
+								<ExtendedTooltip name="ОтборыПолноеИмяРасширеннаяПодсказка" id="232"/>
+								<Events>
+									<Event name="OnChange">ОтборыПолноеИмяПриИзменении</Event>
+								</Events>
+							</InputField>
+							<InputField name="ОтборыПоле" id="233">
+								<DataPath>Отборы.Поле</DataPath>
+								<DropListButton>true</DropListButton>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОтборыПолеКонтекстноеМеню" id="234"/>
+								<ExtendedTooltip name="ОтборыПолеРасширеннаяПодсказка" id="235"/>
+							</InputField>
+							<InputField name="ОтборыВидСравнения" id="236">
+								<DataPath>Отборы.ВидСравнения</DataPath>
+								<DropListButton>true</DropListButton>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОтборыВидСравненияКонтекстноеМеню" id="237"/>
+								<ExtendedTooltip name="ОтборыВидСравненияРасширеннаяПодсказка" id="238"/>
+							</InputField>
+							<InputField name="ОтборыЗначение" id="239">
+								<DataPath>Отборы.Значение</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="ОтборыЗначениеКонтекстноеМеню" id="240"/>
+								<ExtendedTooltip name="ОтборыЗначениеРасширеннаяПодсказка" id="241"/>
+							</InputField>
+						</ChildItems>
+						<Events>
+							<Event name="OnActivateRow">ОтборыПриАктивизацииСтроки</Event>
+						</Events>
+					</Table>
+					<InputField name="ИтогСравненияНастройка" id="360">
+						<DataPath>ИтогСравнения</DataPath>
+						<ReadOnly>true</ReadOnly>
+						<TitleLocation>None</TitleLocation>
+						<MultiLine>true</MultiLine>
+						<Height>3</Height>
+						<HorizontalStretch>true</HorizontalStretch>
+						<VerticalStretch>false</VerticalStretch>
+						<ContextMenu name="ИтогСравненияКонтекстноеМеню" id="361"/>
+						<ExtendedTooltip name="ИтогСравненияРасширеннаяПодсказка" id="362"/>
+					</InputField>
 					</ChildItems>
-				</Table>
+				</Page>
+				<Page name="СтраницаРезультат" id="354">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>true</VerticalStretch>
+					<ExtendedTooltip name="СтраницаРезультатРасширеннаяПодсказка" id="355"/>
+					<ChildItems>
+					<InputField name="ИтогСравнения" id="280">
+						<DataPath>ИтогСравнения</DataPath>
+						<ReadOnly>true</ReadOnly>
+						<TitleLocation>None</TitleLocation>
+						<MultiLine>true</MultiLine>
+						<Height>4</Height>
+						<HorizontalStretch>true</HorizontalStretch>
+						<VerticalStretch>false</VerticalStretch>
+						<ContextMenu name="ИтогСравненияКонтекстноеМеню" id="281"/>
+						<ExtendedTooltip name="ИтогСравненияРасширеннаяПодсказка" id="282"/>
+					</InputField>
+					<UsualGroup name="ГруппаОтбор" id="250">
+						<Group>Horizontal</Group>
+						<Behavior>Usual</Behavior>
+						<Representation>None</Representation>
+						<ShowTitle>false</ShowTitle>
+						<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="251"/>
+						<ChildItems>
+							<InputField name="ОтборОбъект" id="260">
+								<DataPath>ОтборОбъект</DataPath>
+								<ClearButton>true</ClearButton>
+								<DropListButton>true</DropListButton>
+								<ContextMenu name="ОтборОбъектКонтекстноеМеню" id="261"/>
+								<ExtendedTooltip name="ОтборОбъектРасширеннаяПодсказка" id="262"/>
+								<Events>
+									<Event name="OnChange">ОтборПриИзменении</Event>
+								</Events>
+							</InputField>
+							<InputField name="ОтборВид" id="270">
+								<DataPath>ОтборВид</DataPath>
+								<ClearButton>true</ClearButton>
+								<DropListButton>true</DropListButton>
+								<ContextMenu name="ОтборВидКонтекстноеМеню" id="271"/>
+								<ExtendedTooltip name="ОтборВидРасширеннаяПодсказка" id="272"/>
+								<Events>
+									<Event name="OnChange">ОтборПриИзменении</Event>
+								</Events>
+							</InputField>
+						</ChildItems>
+					</UsualGroup>
+					<Table name="Результат" id="290">
+						<Representation>Tree</Representation>
+						<ReadOnly>true</ReadOnly>
+						<ChangeRowSet>false</ChangeRowSet>
+						<ChangeRowOrder>false</ChangeRowOrder>
+						<Height>16</Height>
+						<HorizontalStretch>true</HorizontalStretch>
+						<VerticalStretch>true</VerticalStretch>
+						<DataPath>Результат</DataPath>
+						<RowFilter xsi:nil="true"/>
+						<ContextMenu name="РезультатКонтекстноеМеню" id="291"/>
+						<AutoCommandBar name="РезультатКоманднаяПанель" id="292">
+							<Autofill>false</Autofill>
+						</AutoCommandBar>
+						<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="293"/>
+						<SearchStringAddition name="РезультатСтрокаПоиска" id="294">
+							<AdditionSource>
+								<Item>Результат</Item>
+								<Type>SearchStringRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="РезультатСтрокаПоискаКонтекстноеМеню" id="295"/>
+							<ExtendedTooltip name="РезультатСтрокаПоискаРасширеннаяПодсказка" id="296"/>
+						</SearchStringAddition>
+						<ViewStatusAddition name="РезультатСостояниеПросмотра" id="297">
+							<AdditionSource>
+								<Item>Результат</Item>
+								<Type>ViewStatusRepresentation</Type>
+							</AdditionSource>
+							<ContextMenu name="РезультатСостояниеПросмотраКонтекстноеМеню" id="298"/>
+							<ExtendedTooltip name="РезультатСостояниеПросмотраРасширеннаяПодсказка" id="299"/>
+						</ViewStatusAddition>
+						<SearchControlAddition name="РезультатУправлениеПоиском" id="300">
+							<AdditionSource>
+								<Item>Результат</Item>
+								<Type>SearchControl</Type>
+							</AdditionSource>
+							<ContextMenu name="РезультатУправлениеПоискомКонтекстноеМеню" id="301"/>
+							<ExtendedTooltip name="РезультатУправлениеПоискомРасширеннаяПодсказка" id="302"/>
+						</SearchControlAddition>
+						<ChildItems>
+							<InputField name="РезультатПредставление" id="328">
+								<DataPath>Результат.Представление</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатПредставлениеКонтекстноеМеню" id="329"/>
+								<ExtendedTooltip name="РезультатПредставлениеРасширеннаяПодсказка" id="330"/>
+							</InputField>
+							<InputField name="РезультатСколькоРаз" id="331">
+								<DataPath>Результат.СколькоРаз</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатСколькоРазКонтекстноеМеню" id="332"/>
+								<ExtendedTooltip name="РезультатСколькоРазРасширеннаяПодсказка" id="333"/>
+							</InputField>
+							<InputField name="РезультатГде" id="334">
+								<DataPath>Результат.Где</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатГдеКонтекстноеМеню" id="335"/>
+								<ExtendedTooltip name="РезультатГдеРасширеннаяПодсказка" id="336"/>
+							</InputField>
+							<InputField name="РезультатКак" id="337">
+								<DataPath>Результат.Как</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатКакКонтекстноеМеню" id="338"/>
+								<ExtendedTooltip name="РезультатКакРасширеннаяПодсказка" id="339"/>
+							</InputField>
+							<InputField name="РезультатВидОтличия" id="313">
+								<DataPath>Результат.ВидОтличия</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатВидОтличияКонтекстноеМеню" id="314"/>
+								<ExtendedTooltip name="РезультатВидОтличияРасширеннаяПодсказка" id="315"/>
+							</InputField>
+							<InputField name="РезультатОбъект" id="310">
+								<DataPath>Результат.Объект</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатОбъектКонтекстноеМеню" id="311"/>
+								<ExtendedTooltip name="РезультатОбъектРасширеннаяПодсказка" id="312"/>
+							</InputField>
+							<InputField name="РезультатСсылка" id="316">
+								<DataPath>Результат.Ссылка</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатСсылкаКонтекстноеМеню" id="317"/>
+								<ExtendedTooltip name="РезультатСсылкаРасширеннаяПодсказка" id="318"/>
+							</InputField>
+							<InputField name="РезультатИмяПоля" id="319">
+								<DataPath>Результат.ИмяПоля</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатИмяПоляКонтекстноеМеню" id="320"/>
+								<ExtendedTooltip name="РезультатИмяПоляРасширеннаяПодсказка" id="321"/>
+							</InputField>
+							<InputField name="РезультатЗначениеВБазе" id="322">
+								<DataPath>Результат.ЗначениеВБазе</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатЗначениеВБазеКонтекстноеМеню" id="323"/>
+								<ExtendedTooltip name="РезультатЗначениеВБазеРасширеннаяПодсказка" id="324"/>
+							</InputField>
+							<InputField name="РезультатЗначениеВФайле" id="325">
+								<DataPath>Результат.ЗначениеВФайле</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатЗначениеВФайлеКонтекстноеМеню" id="326"/>
+								<ExtendedTooltip name="РезультатЗначениеВФайлеРасширеннаяПодсказка" id="327"/>
+							</InputField>
+							<InputField name="РезультатЗначение3" id="340">
+								<DataPath>Результат.Значение3</DataPath>
+								<EditMode>EnterOnInput</EditMode>
+								<ContextMenu name="РезультатЗначение3КонтекстноеМеню" id="341"/>
+								<ExtendedTooltip name="РезультатЗначение3РасширеннаяПодсказка" id="342"/>
+							</InputField>
+						</ChildItems>
+					</Table>
+					</ChildItems>
+				</Page>
 			</ChildItems>
-		</UsualGroup>
+		</Pages>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
